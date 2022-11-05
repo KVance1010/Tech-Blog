@@ -26,7 +26,7 @@ User.init(
       validate: {
         len: [8],
       },
-    },
+    }
   },
   {  
     hooks: {
@@ -34,7 +34,8 @@ User.init(
       newUserData.password = await bcrypt.hash(newUserData.password, 8);
       return newUserData;
     }
-  },
+  }
+  ,
     sequelize,
     timestamps: false,
     freezeTableName: true,
