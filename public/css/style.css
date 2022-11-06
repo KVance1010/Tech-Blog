@@ -1,56 +1,98 @@
 :root {
-  --headerFooter: #3d5852;
-  --navBar: #86938f;
-  --cardHeaders: #5e877f;
-  --body: #737373;
-  --writing: #f0f8ff;
+	--headerFooter: #3d5852;
+	--navBar: #86938f;
+	--cardHeaders: #5e877f;
+	--body: #737373;
+	--writing: #f0f8ff;
 }
-
-body {
-  font-family: Arial;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background-color: var(--body);
+* {
+	box-sizing: border-box;
 }
 
 a {
-  color: var(--dark);
-  text-decoration: none;
+	color: var(--dark);
+	text-decoration: none;
 }
 
 a:visited {
-  color: inherit;
+	color: inherit;
 }
 
 header {
-  padding: 40px;
-  text-align: center;
-  background: var(--headerFooter);
-  color: var(--light);
+	padding: 40px;
+	font-size: xx-large;
+	text-align: center;
+	background: var(--headerFooter);
+	color: var(--light);
 }
 
 nav {
-  display: flex;
-  align-items: flex-end;
-  background-color: var(--navBar);
+	display: flex;
+	font-size: x-large;
+	align-items: flex-end;
+	background-color: var(--navBar);
 }
 
 nav a {
-  color: var(--writing);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
+	color: var(--writing);
+	padding: 14px 20px;
+	text-decoration: none;
+	text-align: center;
 }
 
 nav a:hover {
-  color: var(--secondary);
-  background-color: var(--body);
+	color: var(--secondary);
+	background-color: var(--body);
 }
 
-footer{
-  height: 50px;
-  /* background-color: var(--headerFooter); */
+body {
+	font-family: Arial;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: var(--body);
+}
+
+.body_container {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+section {
+	width: 90%;
+	margin: 30px;
+	border: solid 2px black;
+}
+
+.blog_title {
+	width: 100%;
+	display: flex;
+	font-weight: bolder;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px;
+	font-size: large;
+	border-bottom: solid 2px black;
+	background-color: var(--cardHeaders);
+	color: var(--writing);
+}
+.title {
+	font-size: xx-large;
+}
+
+.blog_body {
+	width: 100%;
+	padding: 20px;
+	font-size: x-large;
+	background-color: var(--navBar);
+	color: var(--writing);
+}
+
+footer {
+	height: 50px;
+	/* background-color: var(--headerFooter); */
 }
