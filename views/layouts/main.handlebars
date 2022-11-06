@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech-Blog</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script defer src ="/js/index.js"></script>
+  <script defer src="/js/login.js"></script>
 </head>
 
 <body>
@@ -14,10 +16,11 @@
   </header>
   <nav>
     <a href="/">Home</a>
+    <a href="#">Dashboard</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a href="/" id="logout">Logout</a>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/user">Login</a>
     {{/if}}
   </nav>
   <main>
@@ -25,7 +28,9 @@
       {{{body}}}
     </div>
   </main>
+    {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+    {{/if}}
   <footer></footer>
 </body>
-
 </html>

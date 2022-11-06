@@ -1,18 +1,18 @@
 
-<form action="" >
+<form id="loginForm" >
   <h2 class="login_title">Sign In</h2>
   <div class="login_body">
   <div class="login_input">
-    <label for="userId" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="userId" required>
+    <label for="userName" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="userName" required>
   </div>
   <div class="login_input">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" required>
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" minlength="8" required>
   </div>
   <div class="login_buttons">
-  <button type="submit" class="login_button">Submit</button>
-  <a href="#" class="login_anchor"><button class="login_button">Sign up</button></a>
+  <button type="submit" class="login_button" id="submitLogin">Submit</button>
+  <span class="login_anchor login_button" id ="signUpLogin" >Sign up</span>
   </div>
   </div>
 </form>

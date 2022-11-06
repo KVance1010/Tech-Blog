@@ -11,9 +11,8 @@
 
 /************** Main Header **************/
 header {
-	padding: 40px;
-	font-size: xx-large;
-	text-align: center;
+	padding: 20px 85px;
+	font-size: xxx-large;
 	background: var(--headerFooter);
 	color: var(--writing);
 }
@@ -22,6 +21,7 @@ nav {
 	color: var(--writing);
 	display: flex;
 	font-size: x-large;
+	padding-left: 80px;
 	align-items: flex-end;
 	background-color: var(--navBar);
 }
@@ -139,4 +139,7 @@ form {
 
 .login_anchor{
 	margin-left: 20px;
+	padding: 6px 10px;
+	background-color: #efefef;
+	border: solid 2px black;
 }
