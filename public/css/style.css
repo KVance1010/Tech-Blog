@@ -9,6 +9,29 @@
 	box-sizing: border-box;
 }
 
+/************** Main Header **************/
+header {
+	padding: 40px;
+	font-size: xx-large;
+	text-align: center;
+	background: var(--headerFooter);
+	color: var(--writing);
+}
+
+nav {
+	color: var(--writing);
+	display: flex;
+	font-size: x-large;
+	align-items: flex-end;
+	background-color: var(--navBar);
+}
+
+nav a {	
+	padding: 14px 20px;
+	text-decoration: none;
+	text-align: center;
+}
+
 a {
 	color: var(--dark);
 	text-decoration: none;
@@ -18,33 +41,12 @@ a:visited {
 	color: inherit;
 }
 
-header {
-	padding: 40px;
-	font-size: xx-large;
-	text-align: center;
-	background: var(--headerFooter);
-	color: var(--light);
-}
-
-nav {
-	display: flex;
-	font-size: x-large;
-	align-items: flex-end;
-	background-color: var(--navBar);
-}
-
-nav a {
-	color: var(--writing);
-	padding: 14px 20px;
-	text-decoration: none;
-	text-align: center;
-}
-
 nav a:hover {
-	color: var(--secondary);
+	color: black;
 	background-color: var(--body);
 }
 
+/************** Main information area **************/
 body {
 	font-family: Arial;
 	margin: 0;
@@ -54,17 +56,17 @@ body {
 	background-color: var(--body);
 }
 
+/************* Blog layout **************/
 .body_container {
-	margin-top: 30px;
+	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 30px;
+	gap: 40px;
 }
 
 section {
 	width: 90%;
-	margin: 30px;
 	border: solid 2px black;
 }
 
@@ -92,7 +94,49 @@ section {
 	color: var(--writing);
 }
 
+/************** footer **************/
 footer {
 	height: 50px;
 	/* background-color: var(--headerFooter); */
+}
+
+
+/************** Login Page **************/
+form {
+	margin-top: 40px;
+	border: solid 2px black;
+	background-color: var(--cardHeaders);
+	border-radius: 5px;
+}
+
+.login_title {
+	padding: 20px;
+	font-size: xx-large;
+	font-weight: bolder;
+}
+.login_body{
+	border-top: solid 2px black;
+	background-color: var(--writing);
+	padding: 30px;
+	width: 100%;
+	border-radius: 0px 0px 5px 5px;
+}
+.login_input{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin: 10px;
+	font-size: x-large;
+}
+.login_buttons{
+	margin: 20px 20px 0 10px;
+}
+.login_button{
+	font-size: x-large;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.login_anchor{
+	margin-left: 20px;
 }

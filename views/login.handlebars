@@ -1,12 +1,18 @@
-<form>
-  <div class="mb-3">
+
+<form action="" >
+  <h2 class="login_title">Sign In</h2>
+  <div class="login_body">
+  <div class="login_input">
     <label for="userId" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="userId">
+    <input type="text" class="form-control" id="userId" required>
   </div>
-  <div class="mb-3">
+  <div class="login_input">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" required>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="submit" class="btn btn-primary">Sign up</button>
+  <div class="login_buttons">
+  <button type="submit" class="login_button">Submit</button>
+  <a href="#" class="login_anchor"><button class="login_button">Sign up</button></a>
+  </div>
+  </div>
 </form>
