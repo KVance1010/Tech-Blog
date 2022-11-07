@@ -1,0 +1,24 @@
+<div class = "blog_title comments_title"><span class="blog.title">Post</span></div>
+
+<article class="container">
+  <div>
+    <div class = "blog_title"><span class="blog.title">{{blog.title}}</span><span>{{blog.user.user_name}} {{format_date blog.createdAt}} </span></div>
+    <div class = "blog_body">{{blog.post}}</div>
+  </div>
+</article>
+
+<div class = "blog_title comments_title"><span class="blog.title">Comments by Post</span></div>
+
+{{#each blog.comments}}
+<article class="container">
+  <div>
+    <div class = "blog_body format_comment"><span>{{comment}}</span><span>{{user.user_name}} {{format_date createdAt}} </span></div>
+  </div>
+</article>
+{{/each}}
+
+
+<div class="blog_title" id="addComment">Add Comment</div>
+
+
+ <script src="/js/loginSignUp.js"></script>

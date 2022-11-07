@@ -20,7 +20,6 @@ const loginFormHandler = async () => {
 
     if (response.ok) {
       document.location.replace('/');
-      alert('You are now logged in.');
     } else {
       alert('Failed to log in.');
     }
@@ -41,7 +40,6 @@ const signupFormHandler = async () => {
 
     if (response.ok) {
       document.location.replace('/');
-      alert('Signed up successfully.');
     } else {
       alert('Failed to sign up.');
     }

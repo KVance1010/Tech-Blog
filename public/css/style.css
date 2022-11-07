@@ -65,7 +65,7 @@ body {
 	gap: 40px;
 }
 
-section {
+article {
 	width: 90%;
 	border: solid 2px black;
 }
@@ -94,12 +94,32 @@ section {
 	color: var(--writing);
 }
 
+.comments_title {
+	width: 90%;
+	font-size: xxx-large;
+	font-weight: bold;
+	border: solid 2px black;
+}
+
+.format_comment{
+	display: flex;
+	justify-content: space-between;
+}
+#addComment{
+	width: 90%;
+	border: solid 2px black;
+	display: flex;
+	justify-content: center;
+}
+#addComment:hover {
+	color: black;
+	background-color: var(--body);
+}
 /************** footer **************/
 footer {
 	height: 50px;
 	/* background-color: var(--headerFooter); */
 }
-
 
 /************** Login Page **************/
 form {

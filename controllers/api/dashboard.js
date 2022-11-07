@@ -1,18 +1,22 @@
-// Get main blog page
-router.get('/', async (req, res) => {
+const router = require('express').Router();
+const { User, Post } = require('../../models');
+const withAuth = require('../../utils/auth');
+
+
+
+router.get('/:id', withAuth, async (req, res) => {
 	try {
-		const blogs = await Post.findAll(
-			{
+		const blogData = await Post.findByPk(req.params.id, { 
 			include: [
 				{
 					model: User,
 					attributes: ['user_name'],
-				}
-			]
+				},
+			],
 		});
-		const displayedBlogs = blogs.map((post) => post.get({ plain: true }));
-		res.render('homepage', {
-			displayedBlogs,
+		const blog = blogData.get({ plain: true });
+		res.render('blogPage', {
+			blog,
 			loggedIn: req.session.loggedIn,
 		});
 	} catch (err) {
@@ -20,6 +24,3 @@ router.get('/', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
-
-module.exports = router;

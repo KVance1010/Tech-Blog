@@ -16,4 +16,3 @@ const logoutHandler = async () => {
   
   //event Listener
   logout.addEventListener('click', logoutHandler);
-  
