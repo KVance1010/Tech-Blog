@@ -17,7 +17,7 @@ const commentFormHandler = async (event) => {
 	
     console.log('made it to submitComment handles');
 	if (commentText) {
-		const response = await fetch('/api/blog/add', {
+		const response = await fetch('/blog/add', {
 			method: 'POST',
 			body: JSON.stringify({ commentText }),
 			headers: { 'Content-Type': 'application/json' },
