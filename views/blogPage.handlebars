@@ -7,7 +7,7 @@
   </div>
 </article>
 
-<div class = "blog_title comments_title"><span class="blog.title">Comments by Post</span></div>
+<div class = "blog_title comments_title"><span class="blog.title">Comments</span></div>
 
 {{#each blog.comments}}
 <article class="container">
@@ -18,6 +18,17 @@
 {{/each}}
 
 
-<a href= "/api/blog/add " class="blog_title" id="addComment">Add Comment</a>
+<div class="blog_title" id="addComment">Add Comment</div>
 
+<div id="toggleComment" style = "display:none">
+  <div class="blog_title">
+    <label for="commentText" class="form-label">Comment</label>
+    <input type="textarea" class="form-control" id="commentText" required>
+  </div>
+  <div class="blog_body">
+    <button type="submit" class="login_button" id="submitComment">Add Comment</button>
+  </div>
+</div>
 
+ <div id = "postId" style= " display: invisible">{{blog.id}}</div>
+ <script src="/js/addComment.js"></script>

@@ -24,21 +24,21 @@ User.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [8],
-			},
+				len: [8]
+			}
 		},
 	},
 	{
 		hooks: {
 			beforeCreate: async (newUserData) => {
-				newUserData.password = await bcrypt.hash(newUserData.password, 8);
+				newUserData.password = await bcrypt.hashSync(newUserData.password, 8);
 				return newUserData;
 			},
 			beforeBulkCreate: async (newUserData) => {
 				newUserData.forEach(async (user) => {
-					user.password = await bcrypt.hash(user.password, 8);
-				});
-				return newUserData;
+					const pass = user.password;					
+					user.password = await bcrypt.hashSync(pass, 8);
+				});				
 			},
 		},
 		sequelize,

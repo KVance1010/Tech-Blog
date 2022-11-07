@@ -115,6 +115,19 @@ article {
 	color: black;
 	background-color: var(--body);
 }
+#toggleComment{
+	width: 90%;
+	border: solid 2px black;
+}
+#toggleComment label {
+	font-size: x-large;
+}
+
+#toggleComment input{
+	width: 100%;
+	margin-left: 20px;
+}
+
 /************** footer **************/
 footer {
 	height: 50px;

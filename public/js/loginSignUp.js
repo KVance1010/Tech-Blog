@@ -51,7 +51,6 @@ const changeToSignUp = () => {
 	if (signup.textContent === 'Sign up') {
 		signup.textContent = 'Login';
 		loginHeader.textContent = 'Sign up';
-
 	} else {
 		signup.textContent = 'Sign up';
 		loginHeader.textContent = 'Login';
