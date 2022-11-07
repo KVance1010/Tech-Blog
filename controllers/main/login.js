@@ -38,6 +38,8 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect User ID or Password. Please try again!' });
       return;
     }
+    
+    req.session.userId = userData.id;
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
