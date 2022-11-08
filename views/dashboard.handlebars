@@ -1,1 +1,17 @@
-<div class = "blog_title comments_title"><span class="blog.title">Post</span></div>
+{{#unless userPost}}
+
+{{/unless}}
+{{#if userPost.posts}}
+<div class = "blog_title comments_title"><span class="blog.title">Posts</span></div>
+{{#each userPost.posts}}
+{{>dashBoardBlog}}
+{{/each}}
+{{/if}}
+
+{{#if userPost.comments}}
+<div class = "blog_title comments_title"><span class="blog.title">Comments</span></div>
+{{#each userPost.comments}}
+{{>dashBoardComments}}
+{{/each}}
+{{/if}}
+

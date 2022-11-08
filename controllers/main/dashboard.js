@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const auth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', auth, async (req, res) => {
 	try {
 		const userPosts = await User.findByPk(req.session.userId, { 
 			include: [
@@ -15,8 +15,8 @@ router.get('/', withAuth, async (req, res) => {
 			]
 		});
         
-        const userPost = userPosts.map((post) => post.get({ plain: true }));
-		// const userPost = userPosts.get({ plain: true });
+		const userPost = userPosts.get({ plain: true });
+		console.log(userPost);
 		res.render('dashboard', {
 			userPost,
 			loggedIn: req.session.loggedIn,
