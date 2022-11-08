@@ -1,0 +1,22 @@
+<form id="loginForm" >
+  <h2 class="login_title">Update/Delete</h2>
+  <div class="login_body">
+  {{#if data.title}}
+  <div class="login_input">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" value={{data.title}}>
+  </div>
+  {{/if}}
+  <div class="login_input">
+    <label for="input" class="form-label">Post</label>
+    <input type="text" class="form-control" id="input" value= {{#if data.comment}} {{data.comment}} {{else}} {{data.post}} {{/if}} >
+  </div>
+  <div class="login_buttons">
+  <button type="submit" class="login_button" id="update">Update</button>
+  <span class="login_anchor login_button" id ="delete">Delete</span>
+  </div>
+  </div>
+</form>
+
+ <script src="./js/loginSignUp.js"></script>
+ 
