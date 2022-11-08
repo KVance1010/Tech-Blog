@@ -4,12 +4,12 @@
   {{#if data.title}}
   <div class="login_input">
     <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" value={{data.title}}>
+    <input type="text" class="form-control" id="title" value="{{data.title}}">
   </div>
   {{/if}}
   <div class="login_input">
     <label for="input" class="form-label">Post</label>
-    <input type="text" class="form-control" id="input" value= {{#if data.comment}} {{data.comment}} {{else}} {{data.post}} {{/if}} >
+    <input type="text" class="form-control" id="input" value= "{{#if data.comment}} {{data.comment}} {{else}} {{data.post}} {{/if}}" >
   </div>
   <div class="login_buttons">
   <button type="submit" class="login_button" id="update">Update</button>
@@ -18,5 +18,5 @@
   </div>
 </form>
 
- <script src="./js/loginSignUp.js"></script>
+ {{!-- <script src="./js/updateDelete.js"></script> --}}
  
