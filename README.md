@@ -4,9 +4,7 @@
 
 ## Description
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
-
-Your challenge this module is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+This is a fullstack web application that allows programmers to create post and comments. This web site allows the user to use CRUD operations on the data and stores the information to a database..  
 
 ---
 
@@ -28,19 +26,22 @@ Your challenge this module is to build a CMS-style blog site similar to a Wordpr
 
 ## Installation
 
-
+To use this application you can clone the repository, run the "npm i" node command.(Node is required for this application) After the all packages are installed and the database schema is set up the user can run "npm run seed" to seed the database. The application with be displayed to localhost:4200.
 
 ---
 
 ## Usage
 
-
+The homepage can be viewed without logging in. If the user wants to see the comments that are associated with the blogs they have to log in. The user can see their dashboard after logging in and are able to update and delete their post and comments.
 
 ---
 
 ## Technologies
 
 - **MySQL**
+- **CSS**
+- **bcrypt**
+- **Session-Sequelize**
 - **JavaScript**
 - **Handlebars**
 - **Node.js**
