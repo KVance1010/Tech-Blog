@@ -1,12 +1,25 @@
-{{#unless userPost}}
-
-{{/unless}}
 {{#if userPost.posts}}
 <div class = "blog_title comments_title"><span class="blog.title">Posts</span></div>
 {{#each userPost.posts}}
 {{>dashBoardBlog}}
 {{/each}}
 {{/if}}
+
+<div class="blog_title" id="addPost">Add Post</div>
+
+<div id="togglePost" style = "display:none">
+  <div class="blog_title">
+    <label for="blogTitle" class="form-label">Title</label>
+    <input type="textarea" class="form-control" id="blogTitle" required>
+  </div>
+  <div class="blog_body">
+    <label for="blogPost" class="form-label">Blog</label>
+    <input type="textarea" class="form-control" id="blogPost" required>
+  </div>
+  <div class="blog_body">
+    <button type="submit" class="login_button" id="submitPost">Add Post</button>
+  </div>
+</div>
 
 {{#if userPost.comments}}
 <div class = "blog_title comments_title"><span class="blog.title">Comments</span></div>
@@ -15,3 +28,5 @@
 {{/each}}
 {{/if}}
 
+ 
+ <script src="./js/addPost.js"></script>

@@ -3,19 +3,16 @@ const showCommentField = document.querySelector('#toggleComment');
 const submitComment = document.querySelector('#submitComment');
 
 const addComment = () => {
-	console.log(toggleComment.getAttribute('style'));
-	if (toggleComment.getAttribute('style') === 'display:none') {
-		toggleComment.setAttribute('style', 'display:visible');
+	if (showCommentField.getAttribute('style') === 'display:none') {
+		showCommentField.setAttribute('style', 'display:visible');
 	} else {
-		toggleComment.setAttribute('style', 'display:none');
+		showCommentField.setAttribute('style', 'display:none');
 	}
 };
 
 const commentFormHandler = async (event) => {
     event.preventDefault();
 	const commentText = document.querySelector('#commentText').value.trim();
-	
-    console.log('made it to submitComment handles');
 	if (commentText) {
 		const response = await fetch('/api/comment/', {
 			method: 'POST',

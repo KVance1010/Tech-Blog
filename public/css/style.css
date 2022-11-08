@@ -56,7 +56,7 @@ body {
 	background-color: var(--body);
 }
 
-/************* Blog layout **************/
+/************* Main layouts for all pages **************/
 .body_container {
 	margin-top: 40px;
 	display: flex;
@@ -85,6 +85,9 @@ article {
 .title {
 	font-size: xx-large;
 }
+
+
+/************* Blog layout **************/
 
 .blog_body {
 	width: 100%;
@@ -124,6 +127,28 @@ article {
 }
 
 #toggleComment input{
+	width: 100%;
+	margin-left: 20px;
+}
+
+/************** Dashboard **************/
+#addPost{
+	width: 90%;
+	border: solid 2px black;
+	display: flex;
+	justify-content: center;
+}
+#addPost:hover {
+	color: black;
+	background-color: var(--body);
+}
+#togglePost{
+	width: 90%;
+	border: solid 2px black;
+	font-size: x-large;
+}
+
+#togglePost input{
 	width: 100%;
 	margin-left: 20px;
 }

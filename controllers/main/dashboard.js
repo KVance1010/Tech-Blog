@@ -15,7 +15,6 @@ router.get('/', auth, async (req, res) => {
 			]
 		});    
 		const userPost = userPosts.get({ plain: true });
-		console.log(userPost);
 		res.render('dashboard', {
 			userPost,
 			loggedIn: req.session.loggedIn,
@@ -30,9 +29,11 @@ router.get('/blog/:id', auth, async (req, res) => {
 	try {
 		const blogData = await Post.findByPk(req.params.id);
 		const data = blogData.get({ plain: true });
+		req.session.blog = true;
 		res.render('update', {
 			data,
 			loggedIn: req.session.loggedIn,
+			blog: req.session.blog
 		});
 	} catch (err) {
 		console.log(err);
@@ -42,12 +43,14 @@ router.get('/blog/:id', auth, async (req, res) => {
 
 router.get('/comment/:id', auth, async (req, res) => {
 	req.session.postId = req.params.id;
+	req.session.blog = false;
 	try {
 		const commentData = await Post.findByPk(req.params.id);
 		const data = commentData .get({ plain: true });
 		res.render('update', {
 			data,
 			loggedIn: req.session.loggedIn,
+			blog: req.session.blog
 		});
 	} catch (err) {
 		console.log(err);
