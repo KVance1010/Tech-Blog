@@ -159,6 +159,6 @@ Kyle Vance
 
 If you have any questions regarding this project, please reach me by email at vanceofalifetime@protonmail.com
 
-[Live Link](https://git.heroku.com/tech-blog-101.git)
+[Live Link](https://tech-blog-101.herokuapp.com/)
 
 [LinkedIn](https://www.linkedin.com/in/kyle-s-vance/)
