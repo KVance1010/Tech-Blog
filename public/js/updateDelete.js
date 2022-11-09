@@ -35,22 +35,26 @@ const deleteHandler = async () => {
 };
 
 // This function handles the Signing up
-const updateHandler = async () => {
+const updateHandler = async (event) => {
+    event.preventDefault();
     if(windowVal[windowVal.length -2] === 'blog'){
 
+console.log('nothing yet');
 
-
-
-
-
-    }else{
-
-
-
-
-
-
-
+    } else{
+        const comment = document.querySelector('#input').value.trim();
+        const response = await fetch(
+        `/api/comment/${windowVal[windowVal.length - 1]}`,
+        {
+			method: 'PUT', 
+			body: JSON.stringify({ comment }),
+			headers: { 'Content-Type': 'application/json' },
+		});
+		if (response.ok) {
+			document.location.replace('/dashboard');
+		} else {
+			alert('Failed to create comment.');
+		}
     }
 };
 

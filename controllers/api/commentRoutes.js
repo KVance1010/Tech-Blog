@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const auth = require('../../utils/auth');
 
+// Create a comment by its `id` value
 router.post('/', auth, async (req, res) => {
 	try {
 		const createComment = await Comment.create({
@@ -16,19 +17,42 @@ router.post('/', auth, async (req, res) => {
 	}
 });
 
+// Delete a comment by its `id` value
 router.delete('/:id', auth, async (req, res) => {
 	try {
-		const deletedPost = await Comment.destroy({
+		const deletedComment = await Comment.destroy({
 			where: {
 				id: req.params.id
 			},
 		});
-
-		if (!deletedPost) {
-			res.status(404).json({ message: 'No blog found with this id!' });
+		if (!deletedComment) {
+			res.status(404).json({ message: 'No comment found with this id!' });
 			return;
 		}
-		res.status(200).json(deletedPost);
+		res.status(200).json(deletedComment);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+// update a comment by its `id` value
+router.put('/:id', async (req, res) => {
+	try {
+		const updatedComment = await Comment.update(
+			{
+				comment: req.body.comment,
+			},
+			{
+				where: {
+					id: req.params.id,
+				}
+			}
+		);
+		if (!updatedComment ) {
+			res.status(404).json({ message: 'No comment found with this id!' });
+			return;
+		}
+		res.status(200).json(updatedComment);
 	} catch (err) {
 		res.status(500).json(err);
 	}
