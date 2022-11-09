@@ -38,8 +38,20 @@ const deleteHandler = async () => {
 const updateHandler = async (event) => {
     event.preventDefault();
     if(windowVal[windowVal.length -2] === 'blog'){
-
-console.log('nothing yet');
+        const post = document.querySelector('#input').value.trim();
+        const title = document.querySelector('#title').value.trim();
+        const response = await fetch(
+            `/api/blog/${windowVal[windowVal.length - 1]}`,
+            {
+                method: 'PUT', 
+                body: JSON.stringify({ title, post }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+            if (response.ok) {
+                document.location.replace('/dashboard');
+            } else {
+                alert('Failed to create blog.');
+            }
 
     } else{
         const comment = document.querySelector('#input').value.trim();
