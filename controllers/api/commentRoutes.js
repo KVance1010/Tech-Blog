@@ -16,5 +16,23 @@ router.post('/', auth, async (req, res) => {
 	}
 });
 
+router.delete('/:id', auth, async (req, res) => {
+	try {
+		const deletedPost = await Comment.destroy({
+			where: {
+				id: req.params.id
+			},
+		});
+
+		if (!deletedPost) {
+			res.status(404).json({ message: 'No blog found with this id!' });
+			return;
+		}
+		res.status(200).json(deletedPost);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 
 module.exports = router;

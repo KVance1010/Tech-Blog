@@ -45,8 +45,8 @@ router.get('/comment/:id', auth, async (req, res) => {
 	req.session.postId = req.params.id;
 	req.session.blog = false;
 	try {
-		const commentData = await Post.findByPk(req.params.id);
-		const data = commentData .get({ plain: true });
+		const commentData = await Comment.findByPk(req.params.id);
+		const data = commentData.get({ plain: true });
 		res.render('update', {
 			data,
 			loggedIn: req.session.loggedIn,

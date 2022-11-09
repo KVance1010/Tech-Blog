@@ -9,7 +9,7 @@
   {{/if}}
   <div class="login_input">
     <label for="input" class="form-label">Commentary</label>
-    <input type="text" class="form-control" id="input" value= "{{#if data.post}} {{data.post}} {{else}} {{data.comment}} {{/if}}" >
+    <input type="text" class="form-control" id="input" value= "{{#if this.blog}} {{data.post}} {{else}} {{data.comment}} {{/if}}" >
   </div>
   <div class="login_buttons">
   <button type="submit" class="login_button" id="update">Update</button>
@@ -18,5 +18,4 @@
   </div>
 </form>
 
- {{!-- <script src="./js/updateDelete.js"></script> --}}
- 
+ <script src="/js/updateDelete.js"></script>
